@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Estacionamiento</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>🅿️ Control de Asignación de Estacionamiento</h1>
+    </header>
+
+    <main>
+        <h2>Mapa de Lugares</h2>
+        
+        <div class="panel-control">
+        <h3>Verificación Caseta</h3>
+        <input type="text" id="inputBusqueda" placeholder="Buscar por Nombre o Placa..." onkeyup="buscarLugar()" onkeypress="return manejarEnter(event)">
+        <p id="resultadoBusqueda" class="mensaje"></p>
+    </div>
+    <div class="leyenda">
+        </div>
+
+        <div class="leyenda">
+            <span class="disponible"></span> Disponible
+            <span class="ocupado"></span> Ocupado
+        </div>
+
+        <div class="estacionamiento-mapa">
+    
+    <div class="lugar ocupado" id="L-A1">
+        1
+        <span class="nombre-asignado">JAVIER CORDEIRO CIDS</span>
+    </div>
+    <div class="lugar ocupado" id="L-A2">
+        2
+        <span class="nombre-asignado">SERGIO ZARCO BALDERAS</span>
+    </div>
+    <div class="lugar ocupado" id="L-A3">
+        3
+        <span class="nombre-asignado">PAOLA BARBA GONZALEZ</span>
+    </div>
+    <div class="lugar ocupado" id="L-A4">
+        4
+        <span class="nombre-asignado">VALERIA IRAISGUTIERREZ GARCIA</span>
+    </div>
+    <div class="lugar ocupado" id="L-A5">
+        5
+        <span class="nombre-asignado">NELSON ELEUTERIORIOS HENRIQUEZ</span>
+    </div>
+    <div class="lugar ocupado" id="L-A6">
+        6
+        <span class="nombre-asignado">ADRIAN ALEJANDROGONZALEZ RICO</span>
+    </div>
+    <div class="lugar ocupado" id="L-A7">
+        7
+        <span class="nombre-asignado">MA GUADALUPE GRACIELA TEODORAESPINOLA GARCIA</span>
+    </div>
+    <div class="lugar ocupado" id="L-A8">
+        8
+        <span class="nombre-asignado">ALEJANDRO PIÑA MORENO</span>
+    </div>
+    <div class="lugar ocupado" id="L-A9">
+        9
+        <span class="nombre-asignado">MAURICIO BALZARETTI LASCURAINDIANA</span>
+    </div>
+    <div class="lugar ocupado" id="L-A10">
+        10
+        <span class="nombre-asignado">GUADALUPE MATA GARZA</span>
+    </div>
+    
+    <div class="pasillo"></div>
+    
+    <div class="lugar ocupado" id="L-B1">
+        11
+        <span class="nombre-asignado">JENNYFER LIZBETH ALVARADO ISLAS</span>
+    </div>
+    <div class="lugar ocupado" id="L-B2">
+        12
+        <span class="nombre-asignado">YAZBETHARIAS GONZALEZ</span>
+    </div>
+    <div class="lugar ocupado" id="L-B3">
+        13
+        <span class="nombre-asignado">JUAN VICENTE OROZCO HERNANDEZ</span>
+    </div>
+    <div class="lugar ocupado" id="L-B4">
+        14
+        <span class="nombre-asignado">RICARDO DAVID GOMEZ CORDOVA</span>
+    </div>
+    <div class="lugar ocupado" id="L-B5">
+        15
+        <span class="nombre-asignado">RICARDO ALBERTO LOZA YERENA</span>
+    </div>
+    <div class="lugar ocupado" id="L-B6">
+        16
+        <span class="nombre-asignado">JESUS DANIEL GOMEZ QUIJANO</span>
+    </div>
+    <div class="lugar ocupado" id="L-B7">
+        17
+        <span class="nombre-asignado">ALMA ANGELICA MENDEZ GONZALEZ</span>
+    </div>
+    <div class="lugar ocupado" id="L-B8">
+        18
+        <span class="nombre-asignado">JOSE GUADALUPE VALDEZ OSUNA</span>
+    </div>
+    <div class="lugar ocupado" id="L-B9">
+        19
+        <span class="nombre-asignado">GUADALUPE APORTELA VAZQUEZ</span>
+    </div>
+    <div class="lugar ocupado" id="L-B10">
+        20
+        <span class="nombre-asignado">ADRIAN ANGULO FERNANDEZ</span>
+    </div>
+
+</div>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Control de Estacionamiento Simple</p>
+    </footer>
+    <script src="script.js"></script>
+    
+    </body>
+</html>
