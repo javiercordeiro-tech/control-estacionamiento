@@ -2,8 +2,8 @@
 // CONFIGURACIÓN DE LA BASE DE DATOS (GOOGLE APPS SCRIPT URL)
 // ==========================================================
 
-// ¡Tu URL única del servidor de Apps Script ya está integrada aquí!
-const WEB_APP_URL = 'https://script.google.com/a/macros/envases.mx/s/AKfycbyisgyk7BLP6riHZNPBcGBNnIMbOsfEI3TxUMY9nrub0TgyTXp9czxTI-mAwwThArcG/exec';
+// ¡Tu nueva URL única del servidor de Apps Script ya está integrada aquí!
+const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbw6QHRAdAQTWZnDK7Awh_iKCzLHD_yuIAtC0T3shNOUgxG9eFG7g3hfPifSj1y4p2Cy/exec';
 
 
 // ==========================================================
