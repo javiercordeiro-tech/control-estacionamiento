@@ -1,0 +1,161 @@
+/* Estilos Generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background-color: #0056b3;
+    color: white;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Estilos del Mapa de Estacionamiento - ¡NUEVOS AJUSTES CRÍTICOS! */
+.estacionamiento-mapa {
+    display: grid;
+    /* Creamos 10 columnas, una para cada lugar de la fila */
+    grid-template-columns: repeat(10, 1fr); 
+    gap: 5px; /* Espacio reducido entre lugares */
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.lugar {
+    height: 150px; 
+    width: auto; 
+    /* El resto de estilos para centrar el texto se mantienen */
+    display: flex;
+    flex-direction: column; /* CRUCIAL: Apila el número de lugar y el nombre */
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 0.9em; 
+    padding: 5px; /* Añadimos un poco de padding */
+    line-height: 1.2; /* Espaciado de línea para nombres largos */
+}
+.nombre-asignado {
+    /* Estilo para el nombre de la persona */
+    font-size: 0.65em; /* Fuente más pequeña para que quepa */
+    font-weight: normal; /* Menos énfasis que el número de lugar */
+    margin-top: 5px; /* Separa el nombre del número de lugar */
+    text-align: center;
+    display: block; /* Asegura que ocupe su propia línea */
+}
+
+/* Colores de Estado */
+.disponible {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+}
+
+.ocupado {
+    background-color: #f44336; /* Rojo */
+    color: white;
+    cursor: not-allowed; /* Indica que no se puede seleccionar */
+}
+
+/* Estilo del Pasillo */
+.pasillo {
+    /* El pasillo se extiende a lo largo de las 10 columnas */
+    background-color: #e0e0e0;
+    height: 50px; /* Altura para simular el ancho de la calle */
+    grid-column: 1 / -1; /* Se extiende desde la columna 1 hasta la última (10) */
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9em;
+    color: #666;
+    border-radius: 4px;
+}
+.pasillo::after {
+    content: "Pasillo/Área de Tránsito";
+}
+
+/* Estilos para el Panel de Control de Caseta */
+.panel-control {
+    background-color: #e6f7ff; /* Fondo azul claro */
+    border: 1px solid #0056b3;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+.panel-control h3 {
+    margin-top: 0;
+    color: #0056b3;
+}
+
+#inputBusqueda {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.mensaje {
+    font-weight: bold;
+    padding: 5px;
+}
+
+.mensaje.encontrado {
+    color: #4CAF50; /* Verde */
+}
+
+.mensaje.no-encontrado {
+    color: #f44336; /* Rojo */
+}
+
+/* Leyenda */
+.leyenda {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #eee;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+.leyenda span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.leyenda .disponible {
+    background-color: #4CAF50;
+}
+
+.leyenda .ocupado {
+    background-color: #f44336;
+}
+
+footer {
+    margin-top: 30px;
+    padding: 10px 0;
+    background-color: #333;
+    color: white;
+}
