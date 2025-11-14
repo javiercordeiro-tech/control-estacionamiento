@@ -18,29 +18,29 @@ header {
 main {
     max-width: 900px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px; /* Reducido para móviles */
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Estilos del Mapa de Estacionamiento - ¡NUEVOS AJUSTES CRÍTICOS! */
+/* Estilos del Mapa de Estacionamiento - OPTIMIZADO PARA MÓVIL */
 .estacionamiento-mapa {
     display: grid;
     /* Creamos 10 columnas, una para cada lugar de la fila */
     grid-template-columns: repeat(10, 1fr); 
-    gap: 5px; /* Espacio reducido entre lugares */
-    padding: 20px;
+    gap: 2px; /* Espacio reducido entre lugares (de 5px a 2px) */
+    padding: 10px; /* Reducido para ganar espacio */
     border: 2px solid #ccc;
     border-radius: 5px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
+
 .lugar {
     height: 150px; 
     width: auto; 
-    /* El resto de estilos para centrar el texto se mantienen */
     display: flex;
-    flex-direction: column; /* CRUCIAL: Apila el número de lugar y el nombre */
+    flex-direction: column; 
     align-items: center;
     justify-content: center;
     font-weight: bold;
@@ -49,16 +49,26 @@ main {
     cursor: pointer;
     transition: background-color 0.3s;
     font-size: 0.9em; 
-    padding: 5px; /* Añadimos un poco de padding */
-    line-height: 1.2; /* Espaciado de línea para nombres largos */
+    padding: 2px; /* Reducido el padding interno (de 5px a 2px) */
+    line-height: 1.1; /* Espaciado de línea ligeramente reducido */
+    overflow: hidden; /* Asegura que no se desborde */
 }
+
 .nombre-asignado {
-    /* Estilo para el nombre de la persona */
-    font-size: 0.65em; /* Fuente más pequeña para que quepa */
-    font-weight: normal; /* Menos énfasis que el número de lugar */
-    margin-top: 5px; /* Separa el nombre del número de lugar */
+    /* Ajustes para que los nombres largos quepan */
+    font-size: 0.6em; /* Fuente más pequeña (de 0.65em a 0.6em) */
+    font-weight: normal; 
+    margin-top: 3px; /* Reducida la separación (de 5px a 3px) */
     text-align: center;
-    display: block; /* Asegura que ocupe su propia línea */
+    display: block; 
+    word-break: break-word; /* Clave: Rompe las palabras que excedan el ancho */
+    line-height: 1.05; /* Espacio de línea muy ajustado */
+    padding: 0 1px; /* Añadimos padding horizontal mínimo */
+}
+
+/* Ocultamos el nombre si el lugar está disponible */
+.disponible .nombre-asignado {
+    display: none;
 }
 
 /* Colores de Estado */
@@ -70,20 +80,19 @@ main {
 .ocupado {
     background-color: #f44336; /* Rojo */
     color: white;
-    cursor: not-allowed; /* Indica que no se puede seleccionar */
+    cursor: not-allowed;
 }
 
 /* Estilo del Pasillo */
 .pasillo {
-    /* El pasillo se extiende a lo largo de las 10 columnas */
     background-color: #e0e0e0;
-    height: 50px; /* Altura para simular el ancho de la calle */
-    grid-column: 1 / -1; /* Se extiende desde la columna 1 hasta la última (10) */
-    margin: 10px 0;
+    height: 35px; /* Reducida la altura (de 50px a 35px) */
+    grid-column: 1 / -1;
+    margin: 8px 0; /* Reducido el margen */
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.9em;
+    font-size: 0.7em; /* Reducido el tamaño de fuente */
     color: #666;
     border-radius: 4px;
 }
@@ -91,27 +100,28 @@ main {
     content: "Pasillo/Área de Tránsito";
 }
 
-/* Estilos para el Panel de Control de Caseta */
+/* Estilos para el Panel de Control de Caseta (Se mantienen, pero ajustados al MAIN) */
 .panel-control {
-    background-color: #e6f7ff; /* Fondo azul claro */
+    background-color: #e6f7ff;
     border: 1px solid #0056b3;
-    padding: 15px;
-    margin-bottom: 20px;
+    padding: 10px; /* Reducido */
+    margin-bottom: 15px; /* Reducido */
     border-radius: 6px;
 }
 
 .panel-control h3 {
     margin-top: 0;
     color: #0056b3;
+    font-size: 1.1em; /* Ajustado */
 }
 
 #inputBusqueda {
-    width: 80%;
-    padding: 10px;
+    width: 90%; /* Aumentado para mejor uso en móvil */
+    padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 1em;
+    font-size: 0.9em;
 }
 
 .mensaje {
@@ -120,26 +130,27 @@ main {
 }
 
 .mensaje.encontrado {
-    color: #4CAF50; /* Verde */
+    color: #4CAF50;
 }
 
 .mensaje.no-encontrado {
-    color: #f44336; /* Rojo */
+    color: #f44336;
 }
 
 /* Leyenda */
 .leyenda {
-    margin-bottom: 15px;
-    padding: 10px;
+    margin-bottom: 10px;
+    padding: 8px;
     border: 1px solid #eee;
     background-color: #f9f9f9;
     border-radius: 4px;
+    font-size: 0.9em; /* Ajustado */
 }
 
 .leyenda span {
     display: inline-block;
-    width: 20px;
-    height: 20px;
+    width: 15px; /* Reducido el tamaño del cuadro de color */
+    height: 15px;
     border-radius: 3px;
     margin-right: 5px;
     vertical-align: middle;
@@ -154,8 +165,10 @@ main {
 }
 
 footer {
-    margin-top: 30px;
+    margin-top: 20px;
     padding: 10px 0;
     background-color: #333;
     color: white;
+    font-size: 0.8em;
+}
 }
