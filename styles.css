@@ -24,13 +24,13 @@ main {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Estilos del Mapa de Estacionamiento - OPTIMIZADO PARA MÓVIL */
+/* Estilos del Mapa de Estacionamiento - OPTIMIZADO PARA PC/TABLET */
 .estacionamiento-mapa {
     display: grid;
-    /* Creamos 10 columnas, una para cada lugar de la fila */
+    /* 10 columnas para pantallas grandes */
     grid-template-columns: repeat(10, 1fr); 
-    gap: 2px; /* Espacio reducido entre lugares (de 5px a 2px) */
-    padding: 10px; /* Reducido para ganar espacio */
+    gap: 2px; /* Espacio reducido entre lugares */
+    padding: 10px; 
     border: 2px solid #ccc;
     border-radius: 5px;
     margin-top: 10px;
@@ -49,21 +49,21 @@ main {
     cursor: pointer;
     transition: background-color 0.3s;
     font-size: 0.9em; 
-    padding: 2px; /* Reducido el padding interno (de 5px a 2px) */
-    line-height: 1.1; /* Espaciado de línea ligeramente reducido */
-    overflow: hidden; /* Asegura que no se desborde */
+    padding: 2px; /* Reducido el padding interno */
+    line-height: 1.1; 
+    overflow: hidden; 
 }
 
 .nombre-asignado {
     /* Ajustes para que los nombres largos quepan */
-    font-size: 0.6em; /* Fuente más pequeña (de 0.65em a 0.6em) */
+    font-size: 0.6em; /* Fuente más pequeña */
     font-weight: normal; 
-    margin-top: 3px; /* Reducida la separación (de 5px a 3px) */
+    margin-top: 3px; 
     text-align: center;
     display: block; 
     word-break: break-word; /* Clave: Rompe las palabras que excedan el ancho */
-    line-height: 1.05; /* Espacio de línea muy ajustado */
-    padding: 0 1px; /* Añadimos padding horizontal mínimo */
+    line-height: 1.05; 
+    padding: 0 1px; 
 }
 
 /* Ocultamos el nombre si el lugar está disponible */
@@ -86,13 +86,13 @@ main {
 /* Estilo del Pasillo */
 .pasillo {
     background-color: #e0e0e0;
-    height: 35px; /* Reducida la altura (de 50px a 35px) */
+    height: 35px; /* Reducida la altura */
     grid-column: 1 / -1;
-    margin: 8px 0; /* Reducido el margen */
+    margin: 8px 0; 
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.7em; /* Reducido el tamaño de fuente */
+    font-size: 0.7em;
     color: #666;
     border-radius: 4px;
 }
@@ -100,23 +100,23 @@ main {
     content: "Pasillo/Área de Tránsito";
 }
 
-/* Estilos para el Panel de Control de Caseta (Se mantienen, pero ajustados al MAIN) */
+/* Estilos para el Panel de Control de Caseta */
 .panel-control {
     background-color: #e6f7ff;
     border: 1px solid #0056b3;
-    padding: 10px; /* Reducido */
-    margin-bottom: 15px; /* Reducido */
+    padding: 10px; 
+    margin-bottom: 15px; 
     border-radius: 6px;
 }
 
 .panel-control h3 {
     margin-top: 0;
     color: #0056b3;
-    font-size: 1.1em; /* Ajustado */
+    font-size: 1.1em; 
 }
 
 #inputBusqueda {
-    width: 90%; /* Aumentado para mejor uso en móvil */
+    width: 90%; 
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -144,12 +144,12 @@ main {
     border: 1px solid #eee;
     background-color: #f9f9f9;
     border-radius: 4px;
-    font-size: 0.9em; /* Ajustado */
+    font-size: 0.9em; 
 }
 
 .leyenda span {
     display: inline-block;
-    width: 15px; /* Reducido el tamaño del cuadro de color */
+    width: 15px; 
     height: 15px;
     border-radius: 3px;
     margin-right: 5px;
@@ -171,4 +171,43 @@ footer {
     color: white;
     font-size: 0.8em;
 }
+
+/* ========================================================== */
+/* OPTIMIZACIÓN MÓVIL (MEDIA QUERY) - PARA PANTALLAS PEQUEÑAS */
+/* ========================================================== */
+
+@media (max-width: 600px) {
+    
+    /* Reducimos el padding general en móviles */
+    main {
+        padding: 5px; 
+    }
+
+    /* Cambiamos la estructura del mapa de 10 a 5 columnas para dar más ancho a los nombres */
+    .estacionamiento-mapa {
+        grid-template-columns: repeat(5, 1fr); 
+        gap: 5px; /* Dejamos un poco más de espacio entre cuadros */
+        padding: 5px;
+    }
+    
+    /* Aseguramos que el pasillo ocupe el nuevo ancho de 5 columnas */
+    .pasillo {
+        grid-column: 1 / -1; /* Ocupa todas las 5 columnas */
+    }
+
+    /* Ajustamos el tamaño de los lugares para la nueva proporción */
+    .lugar {
+        height: 100px; /* Reducimos la altura */
+    }
+
+    /* Damos un poco más de tamaño al nombre para mejor legibilidad con el nuevo ancho */
+    .nombre-asignado {
+        font-size: 0.7em; 
+        line-height: 1.1;
+    }
+
+    /* Hacemos más pequeña la leyenda para ahorrar espacio */
+    .leyenda {
+        font-size: 0.8em;
+    }
 }
