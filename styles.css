@@ -210,4 +210,34 @@ footer {
     .leyenda {
         font-size: 0.8em;
     }
+    /* ========================================================== */
+/* OPTIMIZACIÓN EXTREMA (IPHONE SE y similares) */
+/* Se activa en pantallas muy estrechas (< 360px) para usar 4 columnas */
+/* ========================================================== */
+
+@media (max-width: 360px) {
+    
+    /* Cambiamos la estructura del mapa de 5 a 4 columnas */
+    .estacionamiento-mapa {
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 5px; /* Mantenemos un buen espacio */
+        padding: 5px;
+    }
+    
+    /* Aseguramos que el pasillo ocupe el nuevo ancho de 4 columnas */
+    .pasillo {
+        grid-column: 1 / -1; 
+    }
+
+    /* Reducimos la altura de los lugares aún más si es necesario */
+    .lugar {
+        height: 90px; 
+    }
+    
+    /* Ajustamos el tamaño de fuente del nombre */
+    .nombre-asignado {
+        font-size: 0.65em; /* Ligeramente más grande que 0.6em para aprovechar el espacio */
+    }
 }
+}
+
